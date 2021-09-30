@@ -1,5 +1,15 @@
 <h1>Sign Up</h1>
+<!--#what is Model in the form-->
 <%= form_with model: @user, url:sign_up_path do |form|%>
+
+  <% if @user.errors.any?%>
+    <div class="alert alert-danger">
+      <% @user.errors.full_messages.each do |messages| %>
+      <div><%=messages %></div>
+      <% end %>
+    </div>
+<%end %>
+
   <div class="mb-3">
     <%= form.label :email %>
   <%= form.text_field :email,class: "form-control",placeholder: "steve@apple.com" %>
@@ -15,7 +25,7 @@
   <%= form.password_field :password_confirmation,class: "form-control",placeholder: "password"  %>
   </div>
   <div class="mb-3">
-<%=form.submit "Get Started",class: "btn btn-warning"%>
+<%=form.submit "Sign Up",class: "btn btn-primary"%>
   </div>
 
 <% end %>
