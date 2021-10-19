@@ -13,8 +13,8 @@ class SessionController<ApplicationController
     else
       #flash is working but how
       flash[:alert] = "Invalid email or password"
-      # render :new
-      redirect_to sign_in_path
+      render :new
+      # redirect_to sign_in_path
     end
   end
 
@@ -22,4 +22,10 @@ class SessionController<ApplicationController
     session[:user_id]=nil
     redirect_to root_path,notice: "logged out"
   end
+
+  def test
+    @a=Teacher.last
+    render json: @a.attributes.slice('name', :'fname')
+  end
+
 end

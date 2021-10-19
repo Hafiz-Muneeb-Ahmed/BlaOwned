@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  b_id: MyString
+  b_name: MyString
+  b_type: MyString
+  b_lng: MyString
+  b_lat: MyString
+
+two:
+  b_id: MyString
+  b_name: MyString
+  b_type: MyString
+  b_lng: MyString
+  b_lat: MyString
